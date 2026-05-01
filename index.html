@@ -4,38 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VoltZone — Electronics & Gadgets</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0f;
-    --surface: #13131a;
-    --surface2: #1c1c28;
-    --accent: #00e5ff;
+    --bg: #f8f9fb;
+    --surface: #ffffff;
+    --surface2: #f0f2f5;
+    --accent: #2563eb;
     --accent2: #7c3aed;
-    --text: #f0f0f5;
-    --muted: #8888aa;
-    --border: rgba(255,255,255,0.08);
-    --card-bg: #16161f;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: rgba(0,0,0,0.08);
+    --card-bg: #ffffff;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
-  h1,h2,h3,h4,h5 { font-family: 'Syne', sans-serif; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+  h1,h2,h3,h4,h5 { font-family: 'Plus Jakarta Sans', sans-serif; }
 
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(10,10,15,0.92); backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(0,0,0,0.06);
     border-bottom: 1px solid var(--border);
     padding: 0 1.5rem; height: 64px;
     display: flex; align-items: center; justify-content: space-between;
   }
-  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--accent); letter-spacing: -0.5px; cursor: pointer; }
+  .logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--accent); letter-spacing: -0.5px; cursor: pointer; }
   .logo span { color: var(--text); }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; cursor: pointer; }
   .nav-links a:hover { color: var(--text); }
-  .nav-cta { background: var(--accent); color: #000; font-weight: 700; font-size: 0.85rem; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; border: none; font-family: 'Syne', sans-serif; letter-spacing: 0.3px; }
+  .nav-cta { background: var(--accent); color: #fff; font-weight: 700; font-size: 0.85rem; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; border: none; font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: 0.3px; }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
   .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
 
@@ -54,41 +54,41 @@
     content: '';
     position: absolute; top: -200px; right: -200px;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
     border-radius: 50%;
   }
   .hero::after {
     content: '';
     position: absolute; bottom: -100px; left: -100px;
     width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(124,58,237,0.05) 0%, transparent 70%);
     border-radius: 50%;
   }
   .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,229,255,0.1); border: 1px solid rgba(0,229,255,0.25); border-radius: 100px; padding: 0.3rem 0.9rem; font-size: 0.78rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 500; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.2); border-radius: 100px; padding: 0.3rem 0.9rem; font-size: 0.78rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 500; }
   .hero-badge::before { content: ''; display: block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
   .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.05; margin-bottom: 1.2rem; letter-spacing: -1px; }
   .hero h1 .accent { color: var(--accent); }
   .hero p { font-size: 1.05rem; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
   .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary { background: var(--accent); color: #000; font-weight: 700; padding: 0.8rem 1.8rem; border-radius: 8px; border: none; cursor: pointer; font-size: 0.95rem; font-family: 'Syne', sans-serif; transition: transform 0.2s, box-shadow 0.2s; }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,229,255,0.25); }
-  .btn-outline { background: transparent; color: var(--text); font-weight: 600; padding: 0.8rem 1.8rem; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; font-size: 0.95rem; font-family: 'Syne', sans-serif; transition: border-color 0.2s, background 0.2s; }
+  .btn-primary { background: var(--accent); color: #fff; font-weight: 700; padding: 0.8rem 1.8rem; border-radius: 8px; border: none; cursor: pointer; font-size: 0.95rem; font-family: 'Plus Jakarta Sans', sans-serif; transition: transform 0.2s, box-shadow 0.2s; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.25); }
+  .btn-outline { background: transparent; color: var(--text); font-weight: 600; padding: 0.8rem 1.8rem; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; font-size: 0.95rem; font-family: 'Plus Jakarta Sans', sans-serif; transition: border-color 0.2s, background 0.2s; }
   .btn-outline:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
   .hero-visual { position: relative; }
   .hero-phone {
     width: 100%; max-width: 340px; margin: 0 auto;
-    background: var(--surface2); border-radius: 24px; border: 1px solid var(--border);
+    background: #ffffff; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 24px 60px rgba(0,0,0,0.1);
     padding: 1.5rem; aspect-ratio: 9/16; display: flex; flex-direction: column; gap: 1rem;
     box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
   }
   .phone-header { display: flex; align-items: center; justify-content: space-between; }
-  .phone-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--accent); }
+  .phone-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1rem; color: var(--accent); }
   .phone-cart { width: 32px; height: 32px; background: rgba(0,229,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
-  .phone-banner { background: linear-gradient(135deg, #1a1a2e, #16213e); border-radius: 14px; padding: 1.2rem; border: 1px solid rgba(0,229,255,0.15); }
+  .phone-banner { background: linear-gradient(135deg, #1e3a8a, #2563eb); border-radius: 14px; padding: 1.2rem; border: 1px solid rgba(37,99,235,0.12); }
   .phone-banner-tag { font-size: 0.65rem; color: var(--accent); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.4rem; }
-  .phone-banner h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .phone-banner h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
   .phone-banner p { font-size: 0.7rem; color: var(--muted); }
   .phone-price { font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-top: 0.5rem; }
   .phone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; flex: 1; }
@@ -101,7 +101,7 @@
   .stats { padding: 3rem 1.5rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
   .stat-item { text-align: center; }
-  .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--accent); }
+  .stat-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem; font-weight: 800; color: var(--accent); }
   .stat-label { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
 
   /* FEATURED */
@@ -113,42 +113,42 @@
   .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
   .product-card {
     background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border);
-    overflow: hidden; transition: transform 0.3s, border-color 0.3s;
+    overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     cursor: pointer;
   }
-  .product-card:hover { transform: translateY(-4px); border-color: rgba(0,229,255,0.2); }
+  .product-card:hover { transform: translateY(-4px); border-color: rgba(37,99,235,0.2); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
   .product-img {
     width: 100%; aspect-ratio: 4/3;
     display: flex; align-items: center; justify-content: center;
     font-size: 4rem; background: var(--surface2);
     position: relative; overflow: hidden;
   }
-  .product-img .badge { position: absolute; top: 12px; left: 12px; background: var(--accent); color: #000; font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; font-family: 'Syne', sans-serif; }
+  .product-img .badge { position: absolute; top: 12px; left: 12px; background: var(--accent); color: #000; font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif; }
   .product-info { padding: 1.2rem; }
   .product-cat { font-size: 0.72rem; color: var(--accent); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.4rem; }
-  .product-name { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .product-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
   .product-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin-bottom: 1rem; }
   .product-footer { display: flex; align-items: center; justify-content: space-between; }
-  .product-price { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; }
-  .product-price .old { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; margin-right: 6px; font-weight: 400; font-family: 'DM Sans', sans-serif; }
-  .add-btn { background: var(--accent); color: #000; border: none; border-radius: 8px; width: 36px; height: 36px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: 700; transition: transform 0.2s; }
+  .product-price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.15rem; font-weight: 700; }
+  .product-price .old { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; margin-right: 6px; font-weight: 400; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .add-btn { background: var(--accent); color: #fff; border: none; border-radius: 8px; width: 36px; height: 36px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: 700; transition: transform 0.2s; }
   .add-btn:hover { transform: scale(1.1); }
 
   /* CATEGORIES */
   .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
   .cat-card { background: var(--card-bg); border-radius: 14px; border: 1px solid var(--border); padding: 1.5rem 1rem; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
-  .cat-card:hover { border-color: rgba(0,229,255,0.25); background: rgba(0,229,255,0.04); }
+  .cat-card:hover { border-color: rgba(37,99,235,0.2); background: rgba(37,99,235,0.03); }
   .cat-icon { font-size: 2rem; margin-bottom: 0.7rem; }
-  .cat-name { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 2px; }
+  .cat-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 2px; }
   .cat-count { font-size: 0.72rem; color: var(--muted); }
 
   /* PROMO BANNER */
-  .promo { margin: 2rem 0; background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(0,229,255,0.1)); border: 1px solid rgba(0,229,255,0.15); border-radius: 20px; padding: 3rem 2rem; text-align: center; }
+  .promo { margin: 2rem 0; background: linear-gradient(135deg, rgba(37,99,235,0.07), rgba(124,58,237,0.05)); border: 1px solid rgba(37,99,235,0.12); border-radius: 20px; padding: 3rem 2rem; text-align: center; }
   .promo h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 0.8rem; letter-spacing: -0.5px; }
   .promo p { color: var(--muted); margin-bottom: 1.5rem; }
   .promo-timer { display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
   .timer-block { background: var(--surface2); border-radius: 10px; padding: 0.8rem 1rem; min-width: 70px; text-align: center; border: 1px solid var(--border); }
-  .timer-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+  .timer-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--accent); }
   .timer-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
 
   /* PRODUCTS PAGE */
@@ -157,7 +157,7 @@
   .page-header h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
   .page-header p { color: var(--muted); }
   .filters { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; }
-  .filter-btn { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); padding: 0.45rem 1rem; border-radius: 100px; font-size: 0.82rem; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+  .filter-btn { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); padding: 0.45rem 1rem; border-radius: 100px; font-size: 0.82rem; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: all 0.2s; }
   .filter-btn.active, .filter-btn:hover { background: rgba(0,229,255,0.1); border-color: rgba(0,229,255,0.3); color: var(--accent); }
 
   /* ABOUT PAGE */
@@ -165,26 +165,26 @@
   .about-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
   .about-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 1rem; }
   .about-hero p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
-  .about-visual { background: var(--surface2); border-radius: 20px; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 5rem; border: 1px solid var(--border); }
+  .about-visual { background: linear-gradient(135deg, #dbeafe, #ede9fe); border-radius: 20px; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 5rem; border: 1px solid rgba(37,99,235,0.1); }
   .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
   .team-card { background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border); padding: 1.5rem; text-align: center; }
-  .team-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1rem; border: 2px solid rgba(0,229,255,0.2); }
-  .team-name { font-family: 'Syne', sans-serif; font-weight: 700; margin-bottom: 4px; }
+  .team-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1rem; border: 2px solid rgba(37,99,235,0.12); }
+  .team-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; margin-bottom: 4px; }
   .team-role { font-size: 0.82rem; color: var(--accent); }
   .values-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; }
   .value-card { background: var(--card-bg); border-radius: 14px; border: 1px solid var(--border); padding: 1.5rem; }
   .value-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
-  .value-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem; }
+  .value-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem; }
   .value-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
 
   /* BLOG PAGE */
   .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
   .blog-card { background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; cursor: pointer; transition: transform 0.3s, border-color 0.3s; }
-  .blog-card:hover { transform: translateY(-4px); border-color: rgba(0,229,255,0.2); }
+  .blog-card:hover { transform: translateY(-4px); border-color: rgba(37,99,235,0.2); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
   .blog-img { width: 100%; aspect-ratio: 16/9; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
   .blog-content { padding: 1.2rem; }
   .blog-tag { display: inline-block; font-size: 0.7rem; color: var(--accent); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.6rem; }
-  .blog-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.4; }
+  .blog-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.4; }
   .blog-excerpt { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
   .blog-meta { display: flex; align-items: center; gap: 0.8rem; font-size: 0.75rem; color: var(--muted); }
   .blog-author-dot { width: 28px; height: 28px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; }
@@ -195,7 +195,7 @@
   .contact-info p { color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
   .contact-items { display: flex; flex-direction: column; gap: 1rem; }
   .contact-item { display: flex; align-items: center; gap: 1rem; }
-  .contact-icon { width: 44px; height: 44px; background: rgba(0,229,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; border: 1px solid rgba(0,229,255,0.15); }
+  .contact-icon { width: 44px; height: 44px; background: rgba(37,99,235,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; border: 1px solid rgba(37,99,235,0.12); }
   .contact-text-label { font-size: 0.75rem; color: var(--muted); }
   .contact-text-val { font-weight: 500; font-size: 0.9rem; }
   .form-card { background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border); padding: 2rem; }
@@ -203,7 +203,7 @@
   .form-label { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; font-weight: 500; }
   .form-input, .form-textarea {
     width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px;
-    color: var(--text); padding: 0.75rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    color: var(--text); padding: 0.75rem 1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem;
     outline: none; transition: border-color 0.2s;
   }
   .form-input:focus, .form-textarea:focus { border-color: rgba(0,229,255,0.4); }
@@ -219,7 +219,7 @@
   /* CART MODAL */
   .cart-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 200; }
   .cart-overlay.open { display: flex; justify-content: flex-end; }
-  .cart-panel { width: min(420px, 100vw); background: var(--surface); height: 100vh; overflow-y: auto; padding: 2rem 1.5rem; display: flex; flex-direction: column; }
+  .cart-panel { width: min(420px, 100vw); background: #ffffff; height: 100vh; box-shadow: -4px 0 24px rgba(0,0,0,0.08); overflow-y: auto; padding: 2rem 1.5rem; display: flex; flex-direction: column; }
   .cart-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
   .cart-header h2 { font-size: 1.3rem; font-weight: 800; }
   .close-btn { background: var(--surface2); border: none; color: var(--text); width: 36px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; }
@@ -232,7 +232,7 @@
   .cart-total { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--border); }
   .cart-total-row { display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.9rem; color: var(--muted); }
   .cart-total-row.total { font-size: 1.1rem; color: var(--text); font-weight: 700; margin-top: 0.5rem; }
-  .checkout-btn { width: 100%; background: var(--accent); color: #000; border: none; border-radius: 10px; padding: 1rem; font-size: 1rem; font-weight: 700; cursor: pointer; font-family: 'Syne', sans-serif; margin-top: 1rem; transition: transform 0.2s; }
+  .checkout-btn { width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 10px; padding: 1rem; font-size: 1rem; font-weight: 700; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; margin-top: 1rem; transition: transform 0.2s; }
   .checkout-btn:hover { transform: translateY(-2px); }
   .empty-cart { text-align: center; color: var(--muted); padding: 3rem 0; }
   .empty-cart-icon { font-size: 3rem; margin-bottom: 1rem; }
@@ -245,16 +245,16 @@
   .success-sub { color: var(--muted); }
 
   /* MOBILE NAV OVERLAY */
-  .mobile-nav { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 99; padding: 80px 2rem 2rem; flex-direction: column; gap: 1.5rem; }
+  .mobile-nav { display: none; position: fixed; inset: 0; background: #ffffff; z-index: 99; padding: 80px 2rem 2rem; flex-direction: column; gap: 1.5rem; }
   .mobile-nav.open { display: flex; }
-  .mobile-nav a { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text); text-decoration: none; cursor: pointer; }
+  .mobile-nav a { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text); text-decoration: none; cursor: pointer; }
   .mobile-nav a:hover { color: var(--accent); }
 
   /* FOOTER */
-  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3rem 1.5rem 2rem; }
+  footer { background: #f8f9fb; border-top: 1px solid var(--border); padding: 3rem 1.5rem 2rem; }
   .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
   .footer-brand p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; margin-top: 0.8rem; max-width: 280px; }
-  .footer-col h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem; }
+  .footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem; }
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
   .footer-col ul li { font-size: 0.84rem; color: var(--muted); cursor: pointer; transition: color 0.2s; }
   .footer-col ul li:hover { color: var(--text); }
@@ -264,16 +264,16 @@
   .payment-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; font-size: 0.72rem; color: var(--muted); font-weight: 600; }
 
   /* NEWSLETTER */
-  .newsletter { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 3rem 2rem; text-align: center; margin: 2rem 0; }
+  .newsletter { background: #ffffff; border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); padding: 3rem 2rem; text-align: center; margin: 2rem 0; }
   .newsletter h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem; }
   .newsletter p { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
   .newsletter-form { display: flex; gap: 0.8rem; max-width: 440px; margin: 0 auto; }
-  .newsletter-input { flex: 1; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; }
+  .newsletter-input { flex: 1; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; outline: none; }
   .newsletter-input:focus { border-color: rgba(0,229,255,0.35); }
-  .newsletter-btn { background: var(--accent); color: #000; border: none; border-radius: 8px; padding: 0.75rem 1.3rem; font-weight: 700; cursor: pointer; font-family: 'Syne', sans-serif; white-space: nowrap; }
+  .newsletter-btn { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 0.75rem 1.3rem; font-weight: 700; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; white-space: nowrap; }
 
   /* TOAST */
-  .toast { position: fixed; bottom: 2rem; right: 2rem; background: #1c1c28; border: 1px solid rgba(0,229,255,0.3); border-radius: 12px; padding: 1rem 1.5rem; z-index: 300; display: none; align-items: center; gap: 0.8rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+  .toast { position: fixed; bottom: 2rem; right: 2rem; background: #f0f2f5; border: 1px solid rgba(0,229,255,0.3); border-radius: 12px; padding: 1rem 1.5rem; z-index: 300; display: none; align-items: center; gap: 0.8rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
   .toast.show { display: flex; animation: slideUp 0.3s ease; }
   @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   .toast-icon { font-size: 1.1rem; }
@@ -282,48 +282,48 @@
   /* PAYMENT MODAL */
   .pay-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 400; align-items: center; justify-content: center; padding: 1rem; }
   .pay-overlay.open { display: flex; }
-  .pay-modal { background: #13131a; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; width: 100%; max-width: 480px; overflow: hidden; animation: modalIn 0.3s ease; }
+  .pay-modal { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 20px; box-shadow: 0 24px 60px rgba(0,0,0,0.12); width: 100%; max-width: 480px; overflow: hidden; animation: modalIn 0.3s ease; }
   @keyframes modalIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-  .pay-header { background: #0d0d14; padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .pay-header { background: #f8f9fb; padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.06); }
   .pay-header-left { display: flex; align-items: center; gap: 0.8rem; }
   .pay-lock { font-size: 0.9rem; }
-  .pay-header h3 { font-size: 0.95rem; font-weight: 700; font-family: 'Syne', sans-serif; }
-  .pay-header p { font-size: 0.72rem; color: #8888aa; margin-top: 1px; }
-  .pay-close { background: rgba(255,255,255,0.06); border: none; color: #f0f0f5; width: 30px; height: 30px; border-radius: 8px; cursor: pointer; font-size: 1rem; }
+  .pay-header h3 { font-size: 0.95rem; font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .pay-header p { font-size: 0.72rem; color: #64748b; margin-top: 1px; }
+  .pay-close { background: rgba(255,255,255,0.06); border: none; color: #0f172a; width: 30px; height: 30px; border-radius: 8px; cursor: pointer; font-size: 1rem; }
   .pay-body { padding: 1.5rem; }
-  .pay-amount-box { background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.15); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; }
-  .pay-amount-label { font-size: 0.78rem; color: #8888aa; margin-bottom: 2px; }
-  .pay-amount-val { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: #00e5ff; }
-  .pay-items-mini { font-size: 0.72rem; color: #8888aa; text-align: right; }
+  .pay-amount-box { background: rgba(37,99,235,0.04); border: 1px solid rgba(37,99,235,0.12); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+  .pay-amount-label { font-size: 0.78rem; color: #64748b; margin-bottom: 2px; }
+  .pay-amount-val { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; color: #2563eb; }
+  .pay-items-mini { font-size: 0.72rem; color: #64748b; text-align: right; }
   .pay-methods { display: flex; gap: 0.6rem; margin-bottom: 1.5rem; }
-  .pay-method { flex: 1; background: #1c1c28; border: 2px solid transparent; border-radius: 10px; padding: 0.6rem; text-align: center; cursor: pointer; font-size: 0.75rem; font-weight: 600; color: #8888aa; transition: all 0.2s; }
-  .pay-method.selected { border-color: #00e5ff; color: #00e5ff; background: rgba(0,229,255,0.08); }
+  .pay-method { flex: 1; background: #f0f2f5; border: 2px solid transparent; border-radius: 10px; padding: 0.6rem; text-align: center; cursor: pointer; font-size: 0.75rem; font-weight: 600; color: #64748b; transition: all 0.2s; }
+  .pay-method.selected { border-color: #2563eb; color: #2563eb; background: rgba(0,229,255,0.08); }
   .pay-method-icon { font-size: 1.2rem; display: block; margin-bottom: 3px; }
-  .pay-section-label { font-size: 0.72rem; color: #8888aa; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .pay-section-label { font-size: 0.72rem; color: #64748b; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.7rem; }
   .pay-input-group { margin-bottom: 1rem; }
   .pay-input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1rem; }
-  .pay-label { display: block; font-size: 0.75rem; color: #8888aa; margin-bottom: 0.4rem; }
-  .pay-input { width: 100%; background: #1c1c28; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; color: #f0f0f5; padding: 0.65rem 0.9rem; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; outline: none; transition: border-color 0.2s; }
+  .pay-label { display: block; font-size: 0.75rem; color: #64748b; margin-bottom: 0.4rem; }
+  .pay-input { width: 100%; background: #f0f2f5; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; color: #0f172a; padding: 0.65rem 0.9rem; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem; outline: none; transition: border-color 0.2s; }
   .pay-input:focus { border-color: rgba(0,229,255,0.4); }
-  .card-row { display: flex; align-items: center; background: #1c1c28; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; margin-bottom: 1rem; }
+  .card-row { display: flex; align-items: center; background: #f0f2f5; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; margin-bottom: 1rem; }
   .card-row .pay-input { border: none; flex: 1; }
   .card-brands { display: flex; gap: 4px; padding: 0 0.6rem; }
-  .card-brand { font-size: 0.65rem; font-weight: 700; background: #2a2a3a; border-radius: 4px; padding: 2px 6px; color: #8888aa; }
-  .pay-secure-note { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: #8888aa; margin-bottom: 1.2rem; }
-  .pay-btn { width: 100%; background: #00e5ff; color: #000; border: none; border-radius: 10px; padding: 0.9rem; font-size: 1rem; font-weight: 800; cursor: pointer; font-family: 'Syne', sans-serif; transition: transform 0.2s, box-shadow 0.2s; }
-  .pay-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,229,255,0.3); }
+  .card-brand { font-size: 0.65rem; font-weight: 700; background: #e2e8f0; border-radius: 4px; padding: 2px 6px; color: #64748b; }
+  .pay-secure-note { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: #64748b; margin-bottom: 1.2rem; }
+  .pay-btn { width: 100%; background: #2563eb; color: #fff; border: none; border-radius: 10px; padding: 0.9rem; font-size: 1rem; font-weight: 800; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: transform 0.2s, box-shadow 0.2s; }
+  .pay-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,99,235,0.25); }
   .pay-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
   .pay-processing { text-align: center; padding: 2rem 1.5rem; }
-  .pay-spinner { width: 48px; height: 48px; border: 3px solid rgba(0,229,255,0.15); border-top-color: #00e5ff; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem; }
+  .pay-spinner { width: 48px; height: 48px; border: 3px solid rgba(0,229,255,0.15); border-top-color: #2563eb; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .pay-processing p { color: #8888aa; font-size: 0.88rem; }
+  .pay-processing p { color: #64748b; font-size: 0.88rem; }
   .pay-success { text-align: center; padding: 2rem 1.5rem; }
   .pay-success-icon { font-size: 3.5rem; margin-bottom: 1rem; }
-  .pay-success h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; color: #00e5ff; margin-bottom: 0.5rem; }
-  .pay-success p { color: #8888aa; font-size: 0.85rem; line-height: 1.6; }
-  .pay-order-ref { background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.15); border-radius: 10px; padding: 0.8rem 1rem; margin: 1rem 0; font-size: 0.82rem; color: #8888aa; }
-  .pay-order-ref strong { color: #00e5ff; font-family: 'Syne', sans-serif; }
-  .pay-done-btn { width: 100%; background: transparent; border: 1px solid rgba(0,229,255,0.3); color: #00e5ff; border-radius: 10px; padding: 0.75rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; font-family: 'Syne', sans-serif; margin-top: 0.5rem; }
+  .pay-success h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 800; color: #2563eb; margin-bottom: 0.5rem; }
+  .pay-success p { color: #64748b; font-size: 0.85rem; line-height: 1.6; }
+  .pay-order-ref { background: rgba(37,99,235,0.04); border: 1px solid rgba(37,99,235,0.12); border-radius: 10px; padding: 0.8rem 1rem; margin: 1rem 0; font-size: 0.82rem; color: #64748b; }
+  .pay-order-ref strong { color: #2563eb; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .pay-done-btn { width: 100%; background: transparent; border: 1px solid rgba(0,229,255,0.3); color: #2563eb; border-radius: 10px; padding: 0.75rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; margin-top: 0.5rem; }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
@@ -387,7 +387,7 @@
     <div class="hero-inner">
       <div class="hero-text">
         <div class="hero-badge">Free shipping over $50</div>
-        <h1>Next-level <span class="accent">gadgets</span> for every lifestyle</h1>
+        <h1>Next-level <span style="color:var(--accent);">gadgets</span> for every lifestyle</h1>
         <p>Discover the latest electronics, from cutting-edge smartphones to powerful accessories. Quality tech, unbeatable prices.</p>
         <div class="hero-btns">
           <button class="btn-primary" onclick="showPage('products')">Shop Now</button>
@@ -595,7 +595,7 @@
           </div>
         </div>
         <div class="form-card">
-          <h3 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:1.5rem;font-size:1.1rem;">Send us a message</h3>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;margin-bottom:1.5rem;font-size:1.1rem;">Send us a message</h3>
           <div class="form-row">
             <div class="form-group"><label class="form-label">First name</label><input class="form-input" type="text" placeholder="Alex"></div>
             <div class="form-group"><label class="form-label">Last name</label><input class="form-input" type="text" placeholder="Popescu"></div>
@@ -781,7 +781,7 @@
     <div id="payStep2" style="display:none;">
       <div class="pay-processing">
         <div class="pay-spinner"></div>
-        <h3 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:0.5rem;">Processing payment...</h3>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;margin-bottom:0.5rem;">Processing payment...</h3>
         <p>Please wait. Do not close this window.</p>
       </div>
     </div>
@@ -805,18 +805,18 @@
 
 <script>
 const products = [
-  { id:1, name:'ProBuds X3', cat:'audio', emoji:'🎧', price:79.99, oldPrice:129.99, badge:'Sale', desc:'ANC wireless earbuds with 30h battery and crystal-clear sound.' },
-  { id:2, name:'NovaPhone 14', cat:'phones', emoji:'📱', price:349.99, oldPrice:null, badge:'New', desc:'6.7" AMOLED display, 200MP camera, 5G ready.' },
-  { id:3, name:'ZenWatch Pro', cat:'wearables', emoji:'⌚', price:149.99, oldPrice:199.99, badge:'Sale', desc:'Health tracking, GPS, and 7-day battery life.' },
-  { id:4, name:'GamePad Elite', cat:'gaming', emoji:'🎮', price:59.99, oldPrice:null, badge:null, desc:'Ergonomic wireless controller with haptic feedback.' },
-  { id:5, name:'UltraBook Air', cat:'laptops', emoji:'💻', price:699.99, oldPrice:899.99, badge:'Deal', desc:'14" 2K display, 18h battery, ultra-thin aluminum body.' },
-  { id:6, name:'VoltCam 4K', cat:'cameras', emoji:'📸', price:249.99, oldPrice:null, badge:'New', desc:'4K action camera with image stabilization and waterproofing.' },
-  { id:7, name:'MiniPod Duo', cat:'audio', emoji:'🎵', price:39.99, oldPrice:59.99, badge:'Sale', desc:'Compact earbuds with deep bass and sweat resistance.' },
-  { id:8, name:'TabletX Pro', cat:'phones', emoji:'📟', price:529.99, oldPrice:null, badge:'New', desc:'12" display with stylus support and 256GB storage.' },
-  { id:9, name:'FitBand Ultra', cat:'wearables', emoji:'🏃', price:89.99, oldPrice:null, badge:null, desc:'Advanced fitness tracker with blood oxygen monitoring.' },
-  { id:10, name:'GameBoost Hub', cat:'gaming', emoji:'🕹️', price:34.99, oldPrice:49.99, badge:'Sale', desc:'USB-C hub with cooling fan and 4 USB ports for gaming setups.' },
-  { id:11, name:'SlimBook 15', cat:'laptops', emoji:'🖥️', price:849.99, oldPrice:null, badge:'New', desc:'15.6" FHD, 32GB RAM, 1TB SSD, perfect for professionals.' },
-  { id:12, name:'SparkCharge 65W', cat:'audio', emoji:'🔌', price:29.99, oldPrice:44.99, badge:'Sale', desc:'65W GaN fast charger with 3 ports — charge everything at once.' },
+  { id:1, name:'ProBuds X3', cat:'audio', img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop', price:79.99, oldPrice:129.99, badge:'Sale', desc:'ANC wireless earbuds with 30h battery and crystal-clear sound.' },
+  { id:2, name:'NovaPhone 14', cat:'phones', img:'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop', price:349.99, oldPrice:null, badge:'New', desc:'6.7" AMOLED display, 200MP camera, 5G ready.' },
+  { id:3, name:'ZenWatch Pro', cat:'wearables', img:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop', price:149.99, oldPrice:199.99, badge:'Sale', desc:'Health tracking, GPS, and 7-day battery life.' },
+  { id:4, name:'GamePad Elite', cat:'gaming', img:'https://images.unsplash.com/photo-1593118247619-e2d6f056869e?w=400&h=300&fit=crop', price:59.99, oldPrice:null, badge:null, desc:'Ergonomic wireless controller with haptic feedback.' },
+  { id:5, name:'UltraBook Air', cat:'laptops', img:'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop', price:699.99, oldPrice:899.99, badge:'Deal', desc:'14" 2K display, 18h battery, ultra-thin aluminum body.' },
+  { id:6, name:'VoltCam 4K', cat:'cameras', img:'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&h=300&fit=crop', price:249.99, oldPrice:null, badge:'New', desc:'4K action camera with image stabilization and waterproofing.' },
+  { id:7, name:'MiniPod Duo', cat:'audio', img:'https://images.unsplash.com/photo-1590658268037-6bf12165cd8f?w=400&h=300&fit=crop', price:39.99, oldPrice:59.99, badge:'Sale', desc:'Compact earbuds with deep bass and sweat resistance.' },
+  { id:8, name:'TabletX Pro', cat:'phones', img:'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop', price:529.99, oldPrice:null, badge:'New', desc:'12" display with stylus support and 256GB storage.' },
+  { id:9, name:'FitBand Ultra', cat:'wearables', img:'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=400&h=300&fit=crop', price:89.99, oldPrice:null, badge:null, desc:'Advanced fitness tracker with blood oxygen monitoring.' },
+  { id:10, name:'GameBoost Hub', cat:'gaming', img:'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=400&h=300&fit=crop', price:34.99, oldPrice:49.99, badge:'Sale', desc:'USB-C hub with cooling fan and 4 USB ports for gaming setups.' },
+  { id:11, name:'SlimBook 15', cat:'laptops', img:'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400&h=300&fit=crop', price:849.99, oldPrice:null, badge:'New', desc:'15.6" FHD, 32GB RAM, 1TB SSD, perfect for professionals.' },
+  { id:12, name:'SparkCharge 65W', cat:'audio', img:'https://images.unsplash.com/photo-1608599145589-FAKE628e00b0?w=400&h=300&fit=crop', price:29.99, oldPrice:44.99, badge:'Sale', desc:'65W GaN fast charger with 3 ports — charge everything at once.' },
 ];
 
 let cart = {};
@@ -826,8 +826,8 @@ function renderProducts(containerId, items) {
   const grid = document.getElementById(containerId);
   grid.innerHTML = items.map(p => `
     <div class="product-card">
-      <div class="product-img">
-        ${p.emoji}
+      <div class="product-img" style="padding:0;overflow:hidden;">
+        <img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;display:block;">
         ${p.badge ? `<div class="badge">${p.badge}</div>` : ''}
       </div>
       <div class="product-info">
@@ -876,7 +876,7 @@ function updateCartUI() {
   const subtotal = items.reduce((s, i) => s + i.price * i.qty, 0);
   itemsEl.innerHTML = items.map(i => `
     <div class="cart-item">
-      <div class="cart-item-img">${i.emoji}</div>
+      <div class="cart-item-img" style="overflow:hidden;padding:0;"><img src="${i.img}" alt="${i.name}" style="width:100%;height:100%;object-fit:cover;border-radius:10px;"></div>
       <div style="flex:1;">
         <div class="cart-item-name">${i.name}</div>
         <div class="cart-item-price">$${(i.price * i.qty).toFixed(2)}</div>
