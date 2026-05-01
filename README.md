@@ -3,14 +3,7 @@
 
 ## Despre proiect
 
-In loc sa folosesc un CMS precum WordPress sau Wix, am ales sa construiesc site-ul de la zero folosind HTML, CSS si JavaScript pur. Aceasta decizie a fost luata din mai multe motive:
-
-- CMS-urile gratuite sunt limitate si nu permit controlul complet asupra design-ului si functionalitatilor
-- Versiunile cu functionalitati complete (WooCommerce, teme premium, plugin-uri) implica costuri semnificative
-- Construind de la zero am putut implementa exact cerintele proiectului, fara restrictiile impuse de o platforma terta
-- Rezultatul este un site complet functional, mobile-first, cu toate elementele unui magazin online real
-
-Toate cerintele din enuntul proiectului sunt indeplinite si demonstrabile.
+Site-ul a fost construit manual folosind HTML, CSS si JavaScript, fara un CMS, deoarece platformele disponibile gratuit nu ofereau functionalitati complete de comert electronic (cos de cumparaturi, checkout, plati) fara abonament platit. Toate cerintele din enunt au fost implementate direct in cod.
 
 ## Pagini (6 pagini)
 
@@ -40,7 +33,7 @@ Fluxul de plata este complet simulat si functional:
 2. Se deschide o fereastra de plata securizata (simulata)
 3. Utilizatorul alege metoda de plata: **Card bancar, PayPal, Apple Pay sau Google Pay**
 4. Completeaza datele cardului (formular cu formatare automata)
-5. Apasa "Pay" — apare o animatie de procesare (simuleaza comunicarea cu Stripe)
+5. Apasa "Pay" — apare o animatie de procesare care simuleaza comunicarea cu procesatorul de plati
 6. Se afiseaza un ecran de confirmare cu numar de comanda unic generat (ex: #VZ-483921)
 
 > Platile sunt simulate in scop demonstrativ. Nu se proceseaza bani reali.
